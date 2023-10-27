@@ -1,0 +1,25 @@
+<%- include('partials/header.html') %>
+
+    <section class="outras-noticias">
+        <h2>Você buscou por: </h2>
+        <div class="container">     
+            <div style="width: 100%;" class="mais-lidas">
+                <h3><%= contagem %> resultados</h3>
+                <% for(let i = 0; i < posts.length; i++){ %>
+                    <div class="mais-single">
+                        <a href="<%= posts[i].slug %>">
+                            <img src="<%= posts[i].imagem %>">
+                            <div class="descricao-mais-single">
+                                <h4><%= posts[i].categoria %></h4>
+                                <h2><%= posts[i].titulo %></h2>
+                                <p><%- posts[i].descricaoSmall %></p>
+                            </div><!--descricao-mais-single-->
+                        </a>
+                    </div><!--mais-single-->
+                <% } %>
+                
+            </div><!--mais-lidas-->
+        </div><!--container-->
+    </section><!--outras-noticias-->
+
+<%- include('partials/footer.html') %>

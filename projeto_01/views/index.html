@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/public/style.css" rel="stylesheet"/>
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="container-form">
+                <form method="post">
+                    <input type="text" name="tarefa"/>
+                    <input type="submit" name="acao" value="Add"/>
+                </form>
+            </div>
+        </div>
+        <div class="container">
+            <div class="tarefas">
+                <% for(let i = 0; i < tarefasList.length; i++){ %>
+                    <div class="tarefa-single">
+                        <p><%= tarefasList[i]%></p>
+                        <a href="/deletar/<%= i %>">X</a>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </body>
+</html>

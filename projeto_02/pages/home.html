@@ -1,0 +1,55 @@
+<%- include('partials/header.html') %>
+
+    <section class="noticia-destaque">
+        <div class="container">
+            <a href="<%= posts[0].slug  %>" class="img-destaque" style="background-image: linear-gradient(rgba(0, 0, 0, 0.445),rgba(0, 0, 0, 0.445)),url('<%= posts[0].imagem %>');">
+                <div class="topo-destaque">
+                    <div class="autor-destaque">
+                        <img src="/public/images/autor.jpg">
+                        <h3>por filipe ferreiro</h3>
+                    </div><!--autor-destaque-->
+                    <i class="fa fa-heart" aria-hidden="false"></i>
+                </div><!--topo-destaque-->
+                <div class="title-destaque-desc">
+                    <h2><%= posts[0].titulo %></h2>
+                    <p><%- posts[0].descricao %></p>
+                </div><!--title-destaque-desc-->
+                <!--<img src="/public/images/banner.jpg">-->
+            </a><!--img-destaque-->
+        </div><!--container-->
+    </section><!--noticia-destaque-->
+
+    <section class="outras-noticias">
+        <h2>Últimas notícias</h2>
+        <div class="container">
+            <div class="ultimas-noticias">
+                <% for(let i = 1; i < posts.length; i++){ %>
+                    <div class="box-ultimas-single">
+                        <img src="<%= posts[i].imagem %>">
+                        <div class="box-ultimas-desc">
+                            <h3><%= posts[i].categoria %></h3>
+                            <h2><%= posts[i].titulo %></h2>
+                            <p><%- posts[i].descricao %></p>
+                            <a href="<%= posts[i].slug %>">Ler mais</a>
+                        </div><!--box-ultimas-desc-->
+                    </div><!--box-ultimas-single-->
+                <% } %>
+            </div><!--ultimas-noticias-->
+            <div class="mais-lidas">
+                <h3>Noticias mais lidas</h3>
+                <% for(let i = 0; i < 2; i++){ %>
+                    <div class="mais-single">
+                        <a href="<%= postsViews[i].slug %>">
+                            <img src="<%= postsViews[i].imagem %>">
+                            <div class="descricao-mais-single">
+                                <h4><%= postsViews[i].categoria %></h4>
+                                <p><%- postsViews[i].descricaoSmall %></p>
+                            </div><!--descricao-mais-single-->
+                        </a>
+                    </div><!--mais-single-->
+                <% } %>
+            </div><!--mais-lidas-->
+        </div><!--container-->
+    </section><!--outras-noticias-->
+
+<%- include('partials/footer.html') %>
