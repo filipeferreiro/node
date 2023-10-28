@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.container{
+    max-width: 650px;
+    padding: 20px;
+    margin: 0 auto;
+    max-height: 100%;
+}
+
+.tarefas{
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.tarefa-single{
+    background-color: #ffe666;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.tarefa-single p{
+    font-size: 15px;
+}
+
+.tarefa-single a{
+    color: #000;
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 2.5px 4px;
+    font-size: 14px;
+    background-color: 	#f5c27d;
+    height: 20px;
+}
+
+.container-form{
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.container form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input{
+    height: 35px;
+    border: 1px solid #f3f3f3;
+    font-size: 15px;
+}
+
+form input[type=text]{
+    width: 80%;
+    padding-left: 8px;
+    border-right: 0;
+    border-radius: 8px 0 0 8px;
+}
+
+form input[type=submit]{
+    width: 20%;
+    background-color: #f6cebf;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+form input[type=submit]:hover{
+    background-color: #fdc1ab;
+}
