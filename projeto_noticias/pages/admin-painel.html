@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/public/style.css" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Lato:wght@100;400;700&family=Lustria&family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/13cb636ea3.js" crossorigin="anonymous"></script>
+        <title>Painel de Controle</title>
+    </head>
+    <body>
+        <section class="painel-header">
+            <div class="container">
+                <div class="painel-header-top">
+                    <h2>Painel administrativo | Portal<b>Danki</b></h2>
+                </div><!--painel-header-top-->
+            </div><!--container-->
+        </section><!--painel-header-->
+        <section class="cadastro-noticia">
+            <div class="container">
+                <form enctype="multipart/form-data" method="post" action="/admin/cadastro">
+                    <h2>Cadastro de notícia</h2>
+                    <input type="text" name="titulo_noticia" placeholder="Titulo da noticia" />
+                    <input type="text" name="slug" placeholder="Slug da noticia" />
+                    <input type="file" name="arquivo"/>
+                    <input type="text" name="categoria" placeholder="Categoria da noticia" />
+                    <input type="text" name="autor" placeholder="Autor da noticia" />
+                    <textarea name="noticia" placeholder="Noticia..."></textarea>
+                    <input type="submit" name="enviar" value="Cadastrar"/>
+                </form>
+            </div><!--container-->
+        </section><!--cadastro-noticia-->
+        <section class="lista-noticia">
+            <div class="container">
+                <div class="lista-noticia-wraper">
+                    <h2>Lista de notícias</h2>
+                    <% for(let i = 0; i < posts.length; i++){ %>
+                    <div class="noticia-single-painel">
+                        <p><%= posts[i].titulo %></p>
+                        <a href="/admin/deletar/<%= posts[i].id %>"><i class="fa-solid fa-circle-xmark"></i></a>
+                    </div>
+                    <% } %>
+                </div><!--lista-noticia-wraper-->
+            </div><!--container-->
+        </section><!--cadastro-noticia-->
+    </body>
+</html>
